@@ -6,19 +6,26 @@
 // Una volta create le classi, nel programma istanziare alcuni animali e utilizzare i metodi implementati.
 
 // Esercizio 2 : interfacce
-// Alcuni degli animali che abbiamo creato volano, altri nuotano. Gli animali che volano hanno il seguente metodo : void Vola() (mostra a video “Sto volando!!!”) Gli animali che nuotano hanno il seguente metodo : void Nuota() (mostra a video “Sto nuotando!!!”) Scrivere un programma avente 2 metodi : void FaiVolare(IVolante animale) void FaiNuotare(INuotante animale) Questi metodi prendono come parametro un animale che può o volare / nuotare e richiamano il corrispondente metodo Vola() / Nuota(). Scrivere un programma che istanzi animali che volano o nuotano e richiamare i metodi FaiVolare / FaiNuotare passandoglieli come parametro. Buon lavoro! :)
+// Alcuni degli animali che abbiamo creato volano, altri nuotano.
+// Gli animali che volano hanno il seguente metodo : void Vola() (mostra a video “Sto volando!!!”).
+// Gli animali che nuotano hanno il seguente metodo : void Nuota() (mostra a video “Sto nuotando!!!”).
+// Scrivere un programma avente 2 metodi : void FaiVolare(IVolante animale) void FaiNuotare(INuotante animale).
+// Questi metodi prendono come parametro un animale che può o volare / nuotare e richiamano il corrispondente metodo Vola() / Nuota().
+// Scrivere un programma che istanzi animali che volano o nuotano e richiamare i metodi FaiVolare / FaiNuotare passandoglieli come parametro.
 
 
 //1.
+using csharp_abstract_animals;
+using static AnimalsInterface;
 using static csharp_abstract_animals.Animals;
 
 Animal sparrow1, dog1, dog2, dolphin1, eagle1;
 
-sparrow1 = new Sparrow();
-dolphin1 = new Dolphin();
-dog1 = new Dog();
-dog2 = new Dog();
-eagle1 = new Eagle();
+sparrow1 = new Animals.Sparrow();
+dolphin1 = new Animals.Dolphin();
+dog1 = new Animals.Dog();
+dog2 = new Animals.Dog();
+eagle1 = new Animals.Eagle();
 
 
 Console.WriteLine("PASSERO 1");
@@ -45,3 +52,27 @@ Console.WriteLine("AQUILA 1");
 eagle1.Verse();
 eagle1.Eat();
 Animal.Sleep();
+
+
+//2.
+ISwimmingAnimal dolphin2, dolphin3;
+IFlyingAnimal sparrow2, eagle2; 
+
+dolphin2 = new AnimalsInterface.Dolphin();
+dolphin3 = new AnimalsInterface.Dolphin();
+sparrow2 = new AnimalsInterface.Sparrow();
+eagle2 = new AnimalsInterface.Eagle();
+
+
+Console.WriteLine("DELFINO 2");
+dolphin2.Swim();
+
+Console.WriteLine("DELFINO 3");
+dolphin3.Swim();
+
+Console.WriteLine("PASSERO 2");
+sparrow2.Fly();
+
+Console.WriteLine("AQUILA 2");
+eagle2.Fly();
+

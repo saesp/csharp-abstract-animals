@@ -3,9 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static csharp_abstract_animals.Animals;
 
+
+// Esercizio 2 : interfacce
+// Alcuni degli animali che abbiamo creato volano, altri nuotano.
+// Gli animali che volano hanno il seguente metodo : void Vola() (mostra a video “Sto volando!!!”).
+// Gli animali che nuotano hanno il seguente metodo : void Nuota() (mostra a video “Sto nuotando!!!”).
+// Scrivere un programma avente 2 metodi : void FaiVolare(IVolante animale) void FaiNuotare(INuotante animale).
+// Questi metodi prendono come parametro un animale che può o volare / nuotare e richiamano il corrispondente metodo Vola() / Nuota().
+// Scrivere un programma che istanzi animali che volano o nuotano e richiamare i metodi FaiVolare / FaiNuotare passandoglieli come parametro.
 namespace csharp_abstract_animals
 {
+    //1.
     internal class Animals
     {
         //Classe astratta (classe sia con metodi atratti sia con metodi non astatti)
@@ -22,7 +32,7 @@ namespace csharp_abstract_animals
                 Console.WriteLine("ZZZ");
             }
         }
-        
+
         public class Sparrow : Animal
         {
             public override void Verse()
@@ -69,6 +79,49 @@ namespace csharp_abstract_animals
             {
                 Console.WriteLine("cibo delfino");
             }
+        }
+
+    }
+}
+
+
+
+//2.
+internal class AnimalsInterface
+{
+    //Interfaccia ("classe" completamente astratta (con tutti i metodi astratti))
+    public interface IFlyingAnimal{
+            public abstract void Fly();
+
+    }
+
+    public interface ISwimmingAnimal
+    {
+        public abstract void Swim();
+    }
+
+
+    public class Dolphin : ISwimmingAnimal
+    {
+        public void Swim()
+        {
+            Console.WriteLine("Sto nuotando!");
+        }
+    }
+
+    public class Eagle : IFlyingAnimal
+    {
+        public void Fly()
+        {
+            Console.WriteLine("Sto volando!");
+        }
+    }
+
+    public class Sparrow : IFlyingAnimal
+    {
+        public void Fly()
+        {
+            Console.WriteLine("Sto volando!");
         }
     }
 }
