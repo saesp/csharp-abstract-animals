@@ -10,9 +10,27 @@
 
 
 //1.
-
 using static csharp_abstract_animals.Animals;
 
-Animal sparrow1;
+Animal sparrow1, dog1, dolphin1, eagle1;
+
 sparrow1 = new Sparrow();
+dolphin1 = new Dolphin();
+dog1 = new Dog();
+eagle1 = new Eagle();
+
+Console.WriteLine("PASSERO 1");
 sparrow1.Verse();
+sparrow1.Eat();
+
+Console.WriteLine("DELFINO 1");
+dolphin1.Verse();
+dolphin1.Eat();
+
+Console.WriteLine("CANE 1");
+dog1.Verse();
+dog1.Eat();
+
+Console.WriteLine("AQUILA 1");
+eagle1.Verse();
+eagle1.Eat();

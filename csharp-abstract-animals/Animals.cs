@@ -22,6 +22,7 @@ namespace csharp_abstract_animals
                 Console.WriteLine("ZZZ");
             }
         }
+        
         public class Sparrow : Animal
         {
             public override void Verse()
@@ -31,6 +32,42 @@ namespace csharp_abstract_animals
             public override void Eat()
             {
                 Console.WriteLine("cibo passero");
+            }
+        }
+
+        public class Dog : Animal
+        {
+            public override void Verse()
+            {
+                Console.WriteLine("verso cane");
+            }
+            public override void Eat()
+            {
+                Console.WriteLine("cibo cane");
+            }
+        }
+
+        public class Eagle : Animal
+        {
+            public override void Verse()
+            {
+                Console.WriteLine("verso aquila");
+            }
+            public override void Eat()
+            {
+                Console.WriteLine("cibo aquila");
+            }
+        }
+
+        public class Dolphin : Animal
+        {
+            public override void Verse()
+            {
+                Console.WriteLine("verso delfino");
+            }
+            public override void Eat()
+            {
+                Console.WriteLine("cibo delfino");
             }
         }
     }
