@@ -16,63 +16,27 @@
 
 //1.
 using csharp_abstract_animals;
-using static AnimalsInterface;
 using static csharp_abstract_animals.Animals;
 
-Animal sparrow1, dog1, dog2, dolphin1, eagle1;
+List<Animal> animals = new List<Animal>();
 
-sparrow1 = new Animals.Sparrow();
-dolphin1 = new Animals.Dolphin();
-dog1 = new Animals.Dog();
-dog2 = new Animals.Dog();
-eagle1 = new Animals.Eagle();
+Animal sparrow1, dog1, dolphin1, dolphin2, eagle1;
 
+sparrow1 = new Sparrow();
+dolphin1 = new Dolphin();
+dolphin2 = new Dolphin();
+dog1 = new Dog();
+eagle1 = new Eagle();
 
-Console.WriteLine("PASSERO 1");
-sparrow1.Verse();
-sparrow1.Eat();
-Animal.Sleep();
+animals.Add(sparrow1);
+animals.Add(dog1);
+animals.Add(eagle1);
+animals.Add(dolphin1);
+animals.Add(dolphin2);
 
-Console.WriteLine("DELFINO 1");
-dolphin1.Verse();
-dolphin1.Eat();
-Animal.Sleep();
-
-Console.WriteLine("CANE 1");
-dog1.Verse();
-dog1.Eat();
-Animal.Sleep();
-
-Console.WriteLine("CANE 2");
-dog2.Verse();
-dog2.Eat();
-Animal.Sleep();
-
-Console.WriteLine("AQUILA 1");
-eagle1.Verse();
-eagle1.Eat();
-Animal.Sleep();
-
-
-//2.
-ISwimmingAnimal dolphin2, dolphin3;
-IFlyingAnimal sparrow2, eagle2; 
-
-dolphin2 = new AnimalsInterface.Dolphin();
-dolphin3 = new AnimalsInterface.Dolphin();
-sparrow2 = new AnimalsInterface.Sparrow();
-eagle2 = new AnimalsInterface.Eagle();
-
-
-Console.WriteLine("DELFINO 2");
-dolphin2.Swim();
-
-Console.WriteLine("DELFINO 3");
-dolphin3.Swim();
-
-Console.WriteLine("PASSERO 2");
-sparrow2.Fly();
-
-Console.WriteLine("AQUILA 2");
-eagle2.Fly();
+foreach (Animal animal in animals)
+{
+    animal.Verse();
+    animal.Eat();
+}
 

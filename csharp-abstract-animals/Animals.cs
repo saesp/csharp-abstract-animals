@@ -33,7 +33,16 @@ namespace csharp_abstract_animals
             }
         }
 
-        public class Sparrow : Animal
+    //Interfaccia ("classe" completamente astratta (con tutti i metodi astratti))
+    public interface IFlyingAnimal{
+            public void Fly();
+    }
+
+    public interface ISwimmingAnimal
+    {
+        public abstract void Swim();
+    }
+        public class Sparrow : Animal, ISwimmingAnimal
         {
             public override void Verse()
             {
@@ -42,6 +51,10 @@ namespace csharp_abstract_animals
             public override void Eat()
             {
                 Console.WriteLine("cibo passero");
+            }
+            public void Swim()
+            {
+                Console.WriteLine("Sto nuotando!");
             }
         }
 
@@ -57,7 +70,7 @@ namespace csharp_abstract_animals
             }
         }
 
-        public class Eagle : Animal
+        public class Eagle : Animal, IFlyingAnimal
         {
             public override void Verse()
             {
@@ -67,9 +80,13 @@ namespace csharp_abstract_animals
             {
                 Console.WriteLine("cibo aquila");
             }
+            public void Fly()
+            {
+                Console.WriteLine("Sto volando!");
+            }
         }
 
-        public class Dolphin : Animal
+        public class Dolphin : Animal, IFlyingAnimal
         {
             public override void Verse()
             {
@@ -79,49 +96,10 @@ namespace csharp_abstract_animals
             {
                 Console.WriteLine("cibo delfino");
             }
-        }
-
-    }
-}
-
-
-
-//2.
-internal class AnimalsInterface
-{
-    //Interfaccia ("classe" completamente astratta (con tutti i metodi astratti))
-    public interface IFlyingAnimal{
-            public abstract void Fly();
-
-    }
-
-    public interface ISwimmingAnimal
-    {
-        public abstract void Swim();
-    }
-
-
-    public class Dolphin : ISwimmingAnimal
-    {
-        public void Swim()
-        {
-            Console.WriteLine("Sto nuotando!");
-        }
-    }
-
-    public class Eagle : IFlyingAnimal
-    {
-        public void Fly()
-        {
-            Console.WriteLine("Sto volando!");
-        }
-    }
-
-    public class Sparrow : IFlyingAnimal
-    {
-        public void Fly()
-        {
-            Console.WriteLine("Sto volando!");
+            public void Fly()
+            {
+                Console.WriteLine("Sto volando!");
+            }
         }
     }
 }
